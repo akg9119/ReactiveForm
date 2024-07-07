@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'newApp';
+isLoggedIn :boolean =false;
+userInfo :any ={};
+
+constructor(){
+  const userData =localStorage.getItem("jobLoginUser");
+
+  if(userData == null){
+    this.isLoggedIn = false;
+  }
+  else{
+    this.isLoggedIn = true;
+    this.userInfo =JSON.parse(userData)
+
+  }
+}
 }

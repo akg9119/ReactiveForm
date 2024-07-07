@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <form (ngSubmit)="registerForm()" style="overflow-y: auto;">
+                <h2 class="text-center mb-4">Create New Job Post</h2>
+                <p class="text-center"></p>
+                <div class="form-group">
+                    <label for="first_name">Job Name</label>
+                    <input type="text" class="form-control" id="first_name" placeholder="Enter your job name"
+                        name="JobName" required [(ngModel)]="jobObj.JobName">
+                </div>
+                <div class="form-group" style="margin-top: 10px;">
+                    <select class="form-control" [(ngModel)]="jobObj.Experience" name="Experience">
+                        <option value="" selected>Select Job Category</option>
+                        <!-- <option  *ngfor="let Category of categoryList" [value]="Category.jobCategoryId">{{Category.name}}</option> -->
+                        <option value="Freshers">Freshers</option>
+                        <option value="Experience">Experience</option>
+                    </select>
+                   
+                  
+                </div>
+                <div class="form-group">
+                    <label for="CreatedDate">Created Date</label>
+                    <input type="date" class="form-control" id="CreatedDate" placeholder="Enter your Created Date" name="CreatedDate"
+                        required [(ngModel)]="jobObj.CreatedDate">
+                </div>
+                <!-- <div class="form-group">
+                    <label for="EmployerId">EmployerId</label>
+                    <input type="number" class="form-control" id="EmployerId" placeholder="Enter your Employer ID"
+                        name="EmployerId" required [(ngModel)]="jobObj.EmployerId">
+                </div> -->
+                <!-- <div class="form-group">
+                    <label for="Experience">Experience</label>
+                    <input type="text" class="form-control" id="Experience" placeholder="Enter your Experience" name="Experience"
+                        required [(ngModel)]="jobObj.Experience">
+                </div> -->
+                <div class="form-group">
+                    <label for="package">package</label>
+                    <input type="text" class="form-control" id="package" placeholder="Enter your package" name="package" required
+                        [(ngModel)]="jobObj.package">
+                </div>
+                <div class="form-group">
+                    <label for="Location">Location</label>
+                    <input type="text" class="form-control" id="Location" name="Location" placeholder="Enter Your Location" required
+                        [(ngModel)]="jobObj.Location">
+                </div>
+                <div class="form-group">
+                    <label for="JobDescription">Job Description</label>
+                    <input type="text" class="form-control" id="JobDescription" placeholder="Set Job Description" name="JobDescription"
+                        required [(ngModel)]="jobObj.JobDescription">
+                </div>               
+                <button type="submit" (click)=" CreateJob()" class="btn btn-primary btn-block ">Create Job</button>
+            </form>
+        </div>
+    </div>
+</div>
